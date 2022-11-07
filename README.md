@@ -43,3 +43,44 @@ Please get in contact with [Eyescanner](https://www.eyescanner.se/contact) for s
 ## Quickstart app
 
 There is a [Quickstart app](https://github.com/EyescannerTechnology/sightic-sdk-quickstart-app-ios) available that shows how to integrate the SDK.
+
+## Custom strings
+
+A number of user-visible strings can be customized by the host application, by implementing the protocol `SighticStrings` and providing an instance to the `SigthicInferenceView`. This could for example be used to add support for more languages. The host application is then expected to return a non-nil string for each property defined by the protocol. The protocol is documented with a brief comment of what the string is supposed to say.
+
+If a `nil` value is returned, the SDK will fallback to a default value based on the current language setting. For this to work properly it is important that the returned value is `nil`, and not any other default value.
+
+To add custom strings, do the following:
+
+* Create a new type that implements `protocol SighticStrings` (a struct for example).
+* Return a custom string for each property.
+* Assign an instance to the static property `SighticAnalytics.Strings.customStrings` somewhere in your app's initialization phase.
+
+For example:
+
+```swift
+struct MyStrings: SighticStrings {
+    
+    var alignHoldCloser: String? {
+        let str = NSLocalizedString("sightic-align-hold-closer", comment: "")
+        return str != "sightic-align-hold-closer" ? str : nil // nil if not found
+    }
+    
+    // ... repeat for every property ...
+```
+
+### Providing strings to SDK
+
+```swift
+@main
+struct MyApp: App {
+    init() {
+        SighticAnalytics.Strings.customStrings = MyStrings()
+    }
+    
+    var body: some Scene {
+      WindowGroup {
+        ContentView()
+      }
+    }
+```
