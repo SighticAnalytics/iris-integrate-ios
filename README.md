@@ -46,16 +46,17 @@ There is a [Quickstart app](https://github.com/EyescannerTechnology/sightic-sdk-
 
 ## Custom strings
 
-A number of user-visible strings can be customized by the host application by implementing the protocol `SighticStrings`. This could for example be used to add support for more languages. The host application is then expected to return a non-nil string for each property defined by the protocol. If a `nil` value is returned, the SDK will fallback to a default value.
+A number of user-visible strings can be customized by the host application, by implementing the protocol `SighticStrings` and providing an instance to the `SigthicInferenceView`. This could for example be used to add support for more languages. The host application is then expected to return a non-nil string for each property defined by the protocol. The protocol is documented with a brief comment of what the string is supposed to say.
 
-If a string is missing in the current language, the return value **must** be `nil` to allow the SDK to fallback properly.
+If a `nil` value is returned, the SDK will fallback to a default value based on the current language setting. For this to work properly it is important that the returned value is `nil`, and not any other default value.
 
 To add custom strings, do the following:
 
-* Create a new type that implements `protocol SighticStrings`.
-* Assign an instance of the type to `SighticAnalytics.Strings.customStrings` somewhere in your app's initialization phase.
+* Create a new type that implements `protocol SighticStrings` (a struct for example).
+* Return a custom string for each property.
+* Assign an instance to the static property `SighticAnalytics.Strings.customStrings` somewhere in your app's initialization phase.
 
-### Implementing the protocol
+For example:
 
 ```swift
 struct MyStrings: SighticStrings {
