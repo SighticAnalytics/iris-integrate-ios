@@ -6,6 +6,7 @@ The Sightic Analytics iOS SDK detects the influence of drugs and alcohol through
 
 * Platforms
   * iOS 15
+  * iPhone X or later (except iPhone SE) is recommended
 * Programming languages
   * Swift 5
   * No Objective-C support
@@ -84,4 +85,39 @@ struct MyApp: App {
         ContentView()
       }
     }
+```
+
+## How to check device and SDK support
+
+### Is the SDK version supported?
+
+```swift
+switch await SighticVersion.sdkVersions(apiKey: "your-api-key-here") {
+case let .success(sdkVersions):
+    if sdkVersions.isCurrentVersionSupported {
+        // Start using the SDK.
+    }
+    else {
+        // Using the current version is not recommended.
+        print("Current version (\(SighticVersion.sdkVersion)) is unsupported.")
+        print("Supported versions are: \(sdkVersions.supportedVersions)")
+    }
+case let .failure(error):
+    print("an error occurred: \(error)")
+}
+````
+
+If the current version is outdated, this might print the following.
+
+```text
+Current version (0.0.46) is unsupported.
+Supported versions are: ["0.0.47", "0.0.48", "1.0"]
+````
+
+### Is my device supported?
+
+```swift
+if SighticSupportedDevices.isCurrentDeviceSupported {  
+    // Use SDK
+}
 ```
