@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SighticAnalytics",
-            url: "https://github.com/EyescannerTechnology/sightic-sdk-ios/releases/download/0.0.49/SighticAnalytics.xcframework.zip",
-            checksum: "8cd7af98fd55ced7b23b0642a7b4c9d6d4655fa604aa92d403a84f52e25b4352")
+            url: "https://github.com/EyescannerTechnology/sightic-sdk-ios/releases/download/0.0.50/SighticAnalytics.xcframework.zip",
+            checksum: "62c75817656a055385aa316c90468eb79df53f95ea46a44af05a126df8b9293e")
     ]
 )     
