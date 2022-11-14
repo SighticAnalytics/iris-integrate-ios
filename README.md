@@ -17,7 +17,7 @@ The Sightic Analytics iOS SDK detects the influence of drugs and alcohol through
 
 ## API key
 
-The SDK requires an API key in order to provide the app with a result. Please get in contact with [Sightic Analytics](https://www.sighticanalytics.com/contact) to retrieve a key.
+The SDK requires an API key in order to provide the app with a result. Please get in touch with [Sightic Analytics](https://www.sighticanalytics.com/contact) to retrieve a key.
 
 ## License
 
@@ -25,29 +25,40 @@ The Sightic Analytics iOS SDK is commerical software.
 
 ## Support
 
-Please get in contact with [Sightic Analytics](https://www.sighticanalytics.com/contact) for support.
+Please get in touch with [Sightic Analytics](https://www.sighticanalytics.com/contact) for support.
 
 ## How to use SDK
 
-1. Add SighticAnalytics as a Swift package to your app using the URL https://github.com/EyescannerTechnology/sightic-sdk-ios. You can also [add the SDK as a xcframework](https://github.com/EyescannerTechnology/sightic-sdk-quickstart-app-ios#add-sdk-as-xcframework-instead-of-swift-package).
+### App adds view SighticInferenceView
+
+1. Add `SighticAnalytics` as a Swift package to your app using the URL https://github.com/SighticAnalytics/sightic-sdk-ios. You can also [add the SDK as a xcframework](https://github.com/SighticAnalytics/sightic-sdk-quickstart-app-ios#add-sdk-as-xcframework-instead-of-swift-package).
 1. Add the SwiftUI view `SighticInferenceView` somewhere in your app. You must let the view occupy the **whole** screen. The view requires:
    * An API key
-   * A Completion handler of type `(SighticInferenceRecordingResult) -> ()`.
+   * A bool stating whether to show instructions to the app user prior to starting the test itself.
+   * A completion handler of type `(SighticInferenceRecordingResult) -> ()`.
 1. Show the `SighticInferenceView` view to start the test. The face of the user will be recorded during a test sequence involving eye movements.
-1. The `SighticInferenceView` triggers a callback to the app to indicate that the recording has finished. The app receives a `SighticInferenceRecordingResult` object through the callback.
-1. `SighticInferenceRecordingResult` is a result type that contains either a `SighticInferenceRecording` or a `SighticError`. `SighticInferenceRecording` implements a function named `performInference`.
-1. The app shall call the `performInference` method to send the recorded data to the `Sightic` server for analysis.
+
+### App receives a SighticInferenceRecordingResult in completion handler from SighticInferenceView
+
+1. The `SighticInferenceView` triggers the completion handler back to the app to indicate that the recording has finished.
+1. The app receives a `SighticInferenceRecordingResult` object through the callback.
+1. `SighticInferenceRecordingResult` is a result type that is either a success containing `SighticInferenceRecording` or a failur containing a `SighticError`.
+
+### App makes a peformInference request on the SighticInferenceRecording
+
+1. `SighticInferenceRecording` implements a function named `performInference`.
+1. The app shall call the `performInference` method to send the recorded data to the `Sightic Analytics` server for analysis.
 1. `performInference` is an async function and will return a `SighticInferenceResult` object when done.
 1. `SighticInferenceResult` is a result type that contains either a `SighticInference` or a `SighticError`.
 1. The `SighticInference` object contains a `bool` property named `hasImpairment` and an `Int` property named `confidence` betwen 0 to 100 that can be used by the app to present the result.
 
 ## Quickstart app
 
-There is a [Quickstart app](https://github.com/EyescannerTechnology/sightic-sdk-quickstart-app-ios) available that shows how to integrate the SDK.
+There is a [Quickstart app](https://github.com/SighticAnalytics/sightic-sdk-quickstart-app-ios) available that shows how to integrate the SDK.
 
-## Custom strings
+## Translations using custom strings
 
-A number of user-visible strings can be customized by the host application, by implementing the protocol `SighticStrings` and providing an instance to the `SighticInferenceView`. This could for example be used to add support for more languages. The host application is then expected to return a non-nil string for each property defined by the protocol. The protocol is documented with a brief comment of what the string is supposed to say.
+A number of user-visible strings can be customized by the host application, by implementing the protocol `SighticStrings` and provide an instance to the `SighticInferenceView`. This could for example be used to add support for more languages. The host application is then expected to return a non-nil string for each property defined by the protocol. The protocol is documented with a brief comment of what the string is supposed to say.
 
 If a `nil` value is returned, the SDK will fallback to a default value based on the current language setting. For this to work properly it is important that the returned value is `nil`, and not any other default value.
 
@@ -87,9 +98,9 @@ struct MyApp: App {
     }
 ```
 
-## How to check device and SDK support
+## How to check device and SDK backend support
 
-### Is the SDK version supported?
+### Is the SDK version supported by the Sightic Analytics backend?
 
 ```swift
 switch await SighticVersion.sdkVersions(apiKey: "your-api-key-here") {
@@ -105,14 +116,14 @@ case let .success(sdkVersions):
 case let .failure(error):
     print("an error occurred: \(error)")
 }
-````
+```
 
 If the current version is outdated, this might print the following.
 
 ```text
 Current version (0.0.46) is unsupported.
 Supported versions are: ["0.0.47", "0.0.48", "1.0"]
-````
+```
 
 ### Is my device supported?
 
