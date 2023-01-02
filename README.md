@@ -4,7 +4,7 @@ The Sightic Analytics iOS SDK detects the influence of alcohol through image ana
 
 ## License
 
-The Sightic Analytics iOS SDK is commerical software.
+The Sightic Analytics iOS SDK is commercial software.
 
 ## Support
 
