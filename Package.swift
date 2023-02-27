@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SighticAnalytics",
     platforms: [
-        .iOS(.v15)
+        .iOS(.v14)
     ],
     products: [
         .library(
@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SighticAnalytics",
-            url: "https://github.com/SighticAnalytics/sightic-sdk-ios/releases/download/1.0.0-beta.2/SighticAnalytics.xcframework.zip",
-            checksum: "9bac3afa820145f9fa3cda28e8b3bc1c14051626144f6c46e93458ff76d2a1d2")
+            url: "https://github.com/SighticAnalytics/sightic-sdk-ios/releases/download/1.0.0-beta.3/SighticAnalytics.xcframework.zip",
+            checksum: "4e76b06be7adc58f35c0caa2644d3c4c4d494a1b5df64fd83a567d76e0a1f8bd")
     ]
 )
