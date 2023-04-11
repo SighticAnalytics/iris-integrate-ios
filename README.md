@@ -13,3 +13,7 @@ Please get in touch with [Sightic Analytics](https://www.sighticanalytics.com/co
 ## Quickstart app
 
 There is a [Quickstart app](https://github.com/SighticAnalytics/sightic-sdk-quickstart-app-ios) available that shows how to integrate the SDK.
+
+## Privacy policy
+
+Please see our [privacy policy](./PrivacyPolicy.md) document for more information.
