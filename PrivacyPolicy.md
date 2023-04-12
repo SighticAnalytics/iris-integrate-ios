@@ -4,7 +4,9 @@ Sightic Analytics is committed to protecting the privacy of its users. This priv
 
 ## Information we collect and use
 
-The app is used for estimating the cognitive impairment of the user. This is achieved by instructing the user to follow a dot that moves around on the screen while standing still. The app collects blendshapes, gaze estimation and head position of the app user's face provided by ARKit during the test that follows. The app estimates how well the app user was able to perform on the test based on this and other information. Video or still imagery of the user's face is not saved, nor does this information leave the device. The app does not use audio data.
+While performing the test, the app uses the front camera of the phone to continuously capture the movement of the user's head. It also captures some of the user's facial features. The collected data is only a mathematical representation of face, and can not be used to identify an individual.
+
+No video or still imagery of the user's face is saved, nor does this information leave the device. The app does not use audio data.
 
 ## Sharing Your Information
 
