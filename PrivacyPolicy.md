@@ -10,7 +10,7 @@ No video or still imagery of the user's face is saved, nor does this information
 
 ## Sharing Your Information
 
-No person information is stored nor shared with third parties. No personal information leaves the device.
+No personal information is stored nor shared with third parties. No personal information leaves the device.
 
 ## Security
 
