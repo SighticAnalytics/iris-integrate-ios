@@ -4,7 +4,7 @@ Sightic Analytics is committed to protecting the privacy of its users. This priv
 
 ## Information we collect and use
 
-While performing the test, the app uses the front camera of the phone to continuously capture the movement of the user's head. It also captures some of the user's facial features. The collected data is only a mathematical representation of face, and can not be used to identify an individual.
+While performing the test, the app uses the front camera of the phone to continuously capture the movement of the user's head. It also captures some of the user's facial features. The collected data is only a mathematical representation of the face, and can not be used to identify an individual.
 
 No video or still imagery of the user's face is saved, nor does this information leave the device. The app does not use audio data.
 
