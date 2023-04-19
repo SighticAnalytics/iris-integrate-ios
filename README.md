@@ -10,6 +10,10 @@ The Sightic Analytics iOS SDK is commercial software.
 
 Please get in touch with [Sightic Analytics](https://www.sighticanalytics.com/contact) for support.
 
+## Documentation 
+
+Documentation is available at https://sighticanalytics.github.io/sightic-sdk-ios/documentation/sighticanalytics/.
+
 ## Quickstart app
 
 There is a [Quickstart app](https://github.com/SighticAnalytics/sightic-sdk-quickstart-app-ios) available that shows how to integrate the SDK.
