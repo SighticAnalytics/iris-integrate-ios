@@ -4,7 +4,7 @@ Sightic Analytics is committed to protecting the privacy of its users. This priv
 
 ## 1. Information we collect and use
 
-While performing the sobriety test, the app uses the front camera of the phone to continuously capture the movement of the user's head. It also captures the facial expression (e.g. whether eyelids and mouth are opened), device motion, and the device model identifier. This identifier which is used to determine if the phone model is supported by our service. The collected data is a mathematical representation of the face, and cannot be used to identify an individual.
+While performing the sobriety test, the app uses the front camera of the phone to continuously capture the movement of the user's head. It also captures the facial expression (e.g. whether eyelids and mouth are opened), device motion, and the device model identifier. This identifier is used to determine if the phone model is supported by our service. The collected data is a mathematical representation of the face, and cannot be used to identify an individual.
 
 The data is processed by a machine learning model on our server to classify the user as being impaired or not. All network traffic is encrypted.
 
