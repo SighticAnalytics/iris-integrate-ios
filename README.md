@@ -16,7 +16,7 @@ Please get in touch with [Sightic Analytics](https://www.sighticanalytics.com/co
 
 ## Privacy Policy
 
-Refer to our [privacy policy document](./PrivacyPolicy.md) for more information.
+Refer to our [privacy policy document](https://www.sightic.com/privacy-policy) for more information.
 
 ## License
 
