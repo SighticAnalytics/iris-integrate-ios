@@ -4,14 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "SighticAnalytics",
+    name: "IRISintegrate",
     platforms: [
         .iOS(.v14)
     ],
     products: [
-        .library(name: "SighticAnalytics", targets: ["SighticAnalytics"]),
+        .library(name: "IRISintegrate", targets: ["IRISintegrate"]),
     ],
     targets: [
-        .binaryTarget(name: "SighticAnalytics", url: "https://github.com/SighticAnalytics/sightic-sdk-ios/releases/download/2.0.0/SighticAnalytics.xcframework.zip", checksum: "6f2cd5ff58b38bc90a7af3209515b90e37261a306ea4ac39430ccb352f2d9736"),
+        .binaryTarget(name: "IRISintegrate", url: "https://github.com/SighticAnalytics/iris-integrate-ios/releases/download/2.1.0/IRISintegrate.xcframework.zip", checksum: "81100a564cc1451340db63cf29c022a2f5d0f9fcb9edf6928703ae78fa1e64be"),
     ]
 )
