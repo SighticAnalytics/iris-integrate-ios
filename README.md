@@ -2,11 +2,11 @@
 
 The IRIS integrate iOS framework predicts if a person may be impaired due to alcohol or cannabis.
 
-<!--
 ## Documentation 
 
 Documentation is [available here](https://sighticanalytics.github.io/iris-integrate-ios/documentation/irisintegrate/).
 
+<!--
 ## Quickstart App
 
 There is a [Quickstart App](https://github.com/SighticAnalytics/iris-integrate-quickstart-app-ios) available that shows how to integrate the SDK.
