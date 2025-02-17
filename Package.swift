@@ -12,6 +12,6 @@ let package = Package(
         .library(name: "IRISintegrate", targets: ["IRISintegrate"]),
     ],
     targets: [
-        .binaryTarget(name: "IRISintegrate", url: "https://github.com/SighticAnalytics/iris-integrate-ios/releases/download/2.1.0/IRISintegrate.xcframework.zip", checksum: "81100a564cc1451340db63cf29c022a2f5d0f9fcb9edf6928703ae78fa1e64be"),
+        .binaryTarget(name: "IRISintegrate", url: "https://github.com/SighticAnalytics/iris-integrate-ios/releases/download/3.0.0/IRISintegrate.xcframework.zip", checksum: "0f5b88d760c026e56dd235a3c8eb18db529710ef60b0f587ce197e8cc8eee032"),
     ]
 )
